@@ -30,19 +30,28 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-xl font-bold text-gradient">JD</a>
+        <a href="#" className="font-display text-xl font-bold text-gradient">
+          JA
+        </a>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-muted-foreground hover:text-primary transition-colors font-display">
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-sm text-muted-foreground hover:text-primary transition-colors font-display"
+            >
               {l.label}
             </a>
           ))}
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -56,7 +65,12 @@ const Navbar = () => {
         >
           <div className="px-6 py-4 flex flex-col gap-4">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-primary transition-colors font-display">
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-muted-foreground hover:text-primary transition-colors font-display"
+              >
                 {l.label}
               </a>
             ))}

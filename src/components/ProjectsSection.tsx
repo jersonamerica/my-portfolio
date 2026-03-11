@@ -4,28 +4,47 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured online store with real-time inventory, payment processing, and admin dashboard.",
-    tags: ["React", "Node.js", "Stripe", "PostgreSQL"],
-    color: "from-amber-500/20 to-orange-600/5",
+    title: "MMO Equipment Manager",
+    description:
+      "Full-stack application for MMO players to manage in-game equipment, track stats, and share builds with the community.",
+    tags: [
+      "React",
+      "NextJS",
+      "Node.js",
+      "Tailwind CSS",
+      "MongoDB",
+      "React Query",
+    ],
+    image: "/projects/mmo-equipment-manager.jpg",
+    link: "https://l9-hotdogzz.xyz/",
+    source: "https://github.com/jersonamerica/l9-hotdogz",
   },
   {
-    title: "Analytics Dashboard",
-    description: "Real-time data visualization dashboard with interactive charts, filtering, and CSV export.",
-    tags: ["Next.js", "D3.js", "TypeScript", "Tailwind"],
-    color: "from-blue-500/20 to-cyan-600/5",
+    title: "Cryptojers",
+    description:
+      "A comprehensive cryptocurrency tracking platform featuring a complete list of cryptocurrencies with detailed information for each asset. Access real-time news updates, monitor price changes with interactive graphs that track performance over time, and stay informed about market trends.",
+    tags: ["React", "Redux", "TypeScript", "Ant Design", "CoinGecko API"],
+    image: "/projects/cryptojers.jpg",
+    link: "https://cryptojers.netlify.app/",
+    source: "https://github.com/jersonamerica/cryptojers",
   },
   {
-    title: "Task Management App",
-    description: "Collaborative project management tool with drag-and-drop, real-time updates, and team features.",
-    tags: ["React", "Firebase", "DnD Kit", "Zustand"],
-    color: "from-emerald-500/20 to-teal-600/5",
+    title: "CMS Blog Platform",
+    description:
+      "A headless CMS and blogging platform built with React and Node.js, allowing users to create, manage, and publish content with a rich text editor and media library.",
+    tags: ["React", "Typescript", "GraphQL"],
+    image: "/projects/graphcms.jpg",
+    link: "https://cmsblog.vercel.app/",
+    source: "https://github.com/jersonamerica/cmsblog",
   },
   {
-    title: "AI Content Generator",
-    description: "SaaS application leveraging GPT APIs for generating marketing copy, blog posts, and social media content.",
-    tags: ["Next.js", "OpenAI", "Prisma", "Vercel"],
-    color: "from-purple-500/20 to-pink-600/5",
+    title: "OPEN AI Chat App",
+    description:
+      "An AI-powered chat application that leverages OpenAI's language model to provide intelligent and context-aware responses. Users can engage in natural language conversations, ask questions, and receive informative answers in real-time.",
+    tags: ["React", "OpenAI", "Typescript", "Zustand"],
+    image: "/projects/OpenAI.jpg",
+    link: "https://open-ai-chat-app-dun.vercel.app/",
+    source: "https://github.com/jersonamerica/open-ai-chat-app",
   },
 ];
 
@@ -41,7 +60,9 @@ const ProjectsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-primary font-display text-sm tracking-wider uppercase mb-2">Portfolio</p>
+          <p className="text-primary font-display text-sm tracking-wider uppercase mb-2">
+            Portfolio
+          </p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-16">
             Featured <span className="text-gradient">Projects</span>
           </h2>
@@ -56,8 +77,11 @@ const ProjectsSection = () => {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300"
             >
-              {/* Gradient top */}
-              <div className={`h-32 bg-gradient-to-br ${project.color}`} />
+              {/* Image background */}
+              <div
+                className="h-32 bg-cover bg-center"
+                style={{ backgroundImage: `url(${project.image})` }}
+              />
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
@@ -65,18 +89,33 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
                   <div className="flex gap-2">
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href={project.source || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
                       <Github size={18} />
                     </a>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href={project.link || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
                       <ExternalLink size={18} />
                     </a>
                   </div>
                 </div>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{project.description}</p>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground">
+                    <span
+                      key={tag}
+                      className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
