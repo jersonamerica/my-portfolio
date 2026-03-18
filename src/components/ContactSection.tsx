@@ -198,11 +198,17 @@ const ContactSection = () => {
           <a
             href="https://github.com/jersonamerica"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
           >
             GitHub
           </a>
-          <a href="#" className="hover:text-primary transition-colors">
+          <a
+            href="https://www.linkedin.com/in/jerson-america-544a733a8/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
             LinkedIn
           </a>
           <a href="#" className="hover:text-primary transition-colors">

@@ -54,13 +54,16 @@ const HeroSection = () => {
           <div className="flex gap-4">
             {[
               { icon: Github, href: "https://github.com/jersonamerica" },
-              { icon: Linkedin, href: "#" },
-              { icon: Mail, href: "#" },
+              {
+                icon: Linkedin,
+                href: "https://www.linkedin.com/in/jerson-america-544a733a8/",
+              },
             ].map(({ icon: Icon, href }, i) => (
               <a
                 key={i}
                 href={href}
-                target={href === "#" ? "_self" : "_blank"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
               >
                 <Icon size={20} />

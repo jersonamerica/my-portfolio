@@ -5,7 +5,7 @@ const experiences = [
   {
     role: "Game Developer",
     company: "Extreme Unreal Technology Inc.",
-    period: "2023 — 2026",
+    period: "2023 — 2025",
     description:
       "Responsible for developing and maintaining high-performance game features using Unity. Collaborated with cross-functional teams to deliver engaging gaming experiences.",
   },
