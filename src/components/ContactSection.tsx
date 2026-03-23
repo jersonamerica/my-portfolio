@@ -96,11 +96,11 @@ const ContactSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-primary font-display text-sm tracking-wider uppercase mb-2">
+          <p className="text-secondary font-display text-sm tracking-wider uppercase mb-2 font-bold">
             Contact
           </p>
           <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
-            Let's work <span className="text-gradient">together</span>
+            Let's work <span className="gradient-text-neon">together</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-md mx-auto mb-10">
             I'm currently open to new opportunities. Whether you have a question
@@ -111,7 +111,7 @@ const ContactSection = () => {
             <DialogTrigger asChild>
               <Button
                 size="lg"
-                className="rounded-full px-8 py-7 font-display text-lg group glow-border"
+                className="rounded-full px-8 py-7 font-display text-lg group bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/50 transition-all"
               >
                 <Mail size={20} />
                 Say Hello
@@ -122,10 +122,10 @@ const ContactSection = () => {
               </Button>
             </DialogTrigger>
 
-            <DialogContent className="border-border/80 bg-card p-0 sm:max-w-xl overflow-hidden">
-              <div className="bg-gradient-to-br from-primary/20 via-background to-background p-6 border-b border-border/80">
+            <DialogContent className="border-secondary/50 bg-card p-0 sm:max-w-xl overflow-hidden">
+              <div className="bg-gradient-to-br from-primary/30 via-background to-background p-6 border-b border-secondary/50">
                 <DialogHeader>
-                  <DialogTitle className="font-display text-2xl">
+                  <DialogTitle className="font-display text-2xl text-secondary">
                     Say Hello
                   </DialogTitle>
                 </DialogHeader>
@@ -133,7 +133,7 @@ const ContactSection = () => {
 
               <form onSubmit={handleSubmit} className="space-y-5 p-6">
                 <div className="space-y-2">
-                  <Label htmlFor="senderEmail">Your email</Label>
+                  <Label htmlFor="senderEmail" className="text-secondary">Your email</Label>
                   <Input
                     id="senderEmail"
                     type="email"
@@ -144,15 +144,16 @@ const ContactSection = () => {
                       handleChange("senderEmail", event.target.value)
                     }
                     disabled={isSubmitting}
+                    className="border-secondary/50 focus:border-secondary"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message" className="text-secondary">Message</Label>
                   <Textarea
                     id="message"
                     placeholder="Tell me about your project, role, or question."
-                    className="min-h-36 resize-none"
+                    className="min-h-36 resize-none border-secondary/50 focus:border-secondary"
                     value={formData.message}
                     onChange={(event) =>
                       handleChange("message", event.target.value)
@@ -165,7 +166,7 @@ const ContactSection = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="min-w-32 rounded-full"
+                    className="min-w-32 rounded-full bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/50"
                   >
                     {isSubmitting ? (
                       <>
@@ -192,14 +193,14 @@ const ContactSection = () => {
       </div>
 
       {/* Footer */}
-      <div className="max-w-5xl mx-auto mt-24 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+      <div className="max-w-5xl mx-auto mt-24 pt-8 border-t-2 border-secondary/30 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© 2026 Jerson America. All rights reserved.</p>
         <div className="flex gap-6">
           <a
             href="https://github.com/jersonamerica"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary transition-colors"
+            className="hover:text-secondary transition-colors font-medium"
           >
             GitHub
           </a>
@@ -207,11 +208,11 @@ const ContactSection = () => {
             href="https://www.linkedin.com/in/jerson-america-544a733a8/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary transition-colors"
+            className="hover:text-secondary transition-colors font-medium"
           >
             LinkedIn
           </a>
-          <a href="#" className="hover:text-primary transition-colors">
+          <a href="#" className="hover:text-secondary transition-colors font-medium">
             Twitter
           </a>
         </div>

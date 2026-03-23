@@ -25,12 +25,14 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+        scrolled
+          ? "glass border-secondary/50 backdrop-blur-md"
+          : "border-transparent"
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display text-xl font-bold text-gradient">
+        <a href="#" className="font-display text-xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
           JA
         </a>
 
@@ -40,7 +42,7 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors font-display"
+              className="text-sm text-muted-foreground hover:text-primary relative px-2 py-1 transition-colors duration-150 font-display font-medium"
             >
               {l.label}
             </a>
@@ -49,7 +51,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-secondary hover:text-primary transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -61,7 +63,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden glass border-t border-border"
+          className="md:hidden glass border-t border-secondary/30"
         >
           <div className="px-6 py-4 flex flex-col gap-4">
             {links.map((l) => (
@@ -69,7 +71,7 @@ const Navbar = () => {
                 key={l.href}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-muted-foreground hover:text-primary transition-colors font-display"
+                className="text-muted-foreground hover:text-secondary transition-colors font-display font-medium"
               >
                 {l.label}
               </a>

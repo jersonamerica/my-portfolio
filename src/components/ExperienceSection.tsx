@@ -28,14 +28,14 @@ const experiences = [
     company: "Idigital Enterprise Inc.,",
     period: "2017 — 2018",
     description:
-      "Built and maintained responsive websites and web applications. Collaborated with designers to create visually appealing and user-friendly interfaces.",
+      "Built and maintained internal web application using React, Redux and Typescript.",
   },
   {
     role: "Front End Developer",
     company: "Dottystyle Creative",
     period: "2015 — 2016",
     description:
-      "Develop rich media HTML5 banners. Translate design comps accurately and seamlessly into standards-compliant Web code and cross-browser compatibility. ",
+      "Created rich media HTML5 banners. Worked closely with the design team to ensure the visual quality of the banners and optimized them for performance across various platforms.",
   },
 ];
 
@@ -51,11 +51,11 @@ const ExperienceSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-primary font-display text-sm tracking-wider uppercase mb-2">
+          <p className="text-secondary font-display text-sm tracking-wider uppercase mb-2 font-bold">
             Career
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-16">
-            Work <span className="text-gradient">Experience</span>
+            Work <span className="gradient-text-neon">Experience</span>
           </h2>
         </motion.div>
 
@@ -66,18 +66,20 @@ const ExperienceSection = () => {
               initial={{ opacity: 0, x: -30 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="group relative pl-8 pb-12 border-l border-border last:pb-0"
+              className="group relative pl-8 pb-12 border-l-2 border-secondary/50 hover:border-secondary last:pb-0 transition-colors"
             >
-              {/* Timeline dot */}
-              <div className="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-primary/30 group-hover:bg-primary transition-colors">
-                <div className="absolute inset-1 rounded-full bg-primary" />
+              {/* Neon timeline dot */}
+              <div className="absolute left-0 top-1 -translate-x-[5px] w-3 h-3 rounded-full bg-secondary border-2 border-secondary shadow-lg shadow-secondary/60">
+                <div className="absolute inset-0.5 rounded-full bg-secondary" />
               </div>
 
-              <p className="text-sm text-primary font-display mb-1">
+              <p className="text-sm text-secondary font-display mb-1 font-bold">
                 {exp.period}
               </p>
-              <h3 className="text-xl font-display font-semibold">{exp.role}</h3>
-              <p className="text-muted-foreground font-medium mb-2">
+              <h3 className="text-xl font-display font-bold group-hover:text-secondary transition-colors">
+                {exp.role}
+              </h3>
+              <p className="text-muted-foreground font-medium mb-2 border-b border-primary/30 pb-2">
                 {exp.company}
               </p>
               <p className="text-muted-foreground leading-relaxed">

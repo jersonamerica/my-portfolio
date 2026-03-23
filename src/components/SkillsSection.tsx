@@ -61,11 +61,11 @@ const SkillsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-primary font-display text-sm tracking-wider uppercase mb-2">
+          <p className="text-secondary font-display text-sm tracking-wider uppercase mb-2 font-bold">
             Expertise
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-16">
-            Skills & <span className="text-gradient">Technologies</span>
+            Skills & <span className="gradient-text-neon">Technologies</span>
           </h2>
         </motion.div>
 
@@ -76,16 +76,16 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors"
+              className="p-6 rounded-lg bg-card border-2 border-primary/40 hover:border-secondary hover:shadow-lg hover:shadow-secondary/30 transition-all duration-300"
             >
-              <h3 className="font-display text-lg font-semibold mb-4 text-primary">
+              <h3 className="font-display text-lg font-bold mb-4 text-secondary">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-sm rounded-full bg-secondary text-secondary-foreground"
+                    className="px-3 py-1.5 text-sm rounded border border-secondary/60 bg-secondary/15 text-foreground font-medium hover:border-secondary hover:bg-secondary/25 transition-all"
                   >
                     {skill}
                   </span>

@@ -60,11 +60,11 @@ const ProjectsSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-primary font-display text-sm tracking-wider uppercase mb-2">
+          <p className="text-secondary font-display text-sm tracking-wider uppercase mb-2 font-bold">
             Portfolio
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-16">
-            Featured <span className="text-gradient">Projects</span>
+            Featured <span className="gradient-text-neon">Projects</span>
           </h2>
         </motion.div>
 
@@ -75,25 +75,28 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/30 transition-all duration-300"
+              className="group relative rounded-lg border-2 border-secondary/50 bg-card overflow-hidden hover:border-secondary hover:shadow-lg hover:shadow-secondary/50 transition-all duration-300"
             >
+              {/* Neon accent line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+
               {/* Image background */}
               <div
-                className="h-32 bg-cover bg-center"
+                className="h-32 bg-cover bg-center relative group-hover:brightness-110 transition-all duration-300"
                 style={{ backgroundImage: `url(${project.image})` }}
               />
 
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-display font-semibold group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-display font-bold group-hover:text-secondary transition-colors">
                     {project.title}
                   </h3>
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     <a
                       href={project.source || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-secondary hover:scale-110 transition-all"
                     >
                       <Github size={18} />
                     </a>
@@ -101,7 +104,7 @@ const ProjectsSection = () => {
                       href={project.link || "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-secondary hover:scale-110 transition-all"
                     >
                       <ExternalLink size={18} />
                     </a>
@@ -114,7 +117,7 @@ const ProjectsSection = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground"
+                      className="text-xs px-3 py-1.5 rounded border border-primary/50 bg-primary/10 text-foreground font-medium hover:border-primary hover:bg-primary/20 transition-all"
                     >
                       {tag}
                     </span>
