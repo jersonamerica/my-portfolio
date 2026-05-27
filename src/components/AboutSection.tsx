@@ -20,8 +20,7 @@ const AboutSection = () => {
               About
             </p>
             <h2 className="text-4xl md:text-5xl font-display font-bold">
-              Building Things That
-              <span className="gradient-text-neon"> Matter</span>
+              Building Things That Matter
             </h2>
           </div>
 
@@ -41,7 +40,10 @@ const AboutSection = () => {
                 { num: "20+", label: "Projects" },
                 { num: "30+", label: "Technologies" },
               ].map(({ num, label }) => (
-                <div key={label} className="hover:scale-105 transition-transform">
+                <div
+                  key={label}
+                  className="hover:scale-105 transition-transform"
+                >
                   <p className="text-3xl font-display font-bold text-secondary">
                     {num}
                   </p>

@@ -28,7 +28,7 @@ const HeroSection = () => {
         >
           Jerson
           <br />
-          <span className="text-gradient">America</span>
+          <span>America</span>
         </motion.h1>
 
         <motion.p
@@ -49,7 +49,7 @@ const HeroSection = () => {
         >
           <a
             href="#projects"
-            className="relative group bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded font-display font-bold hover:shadow-lg transition-all duration-300 overflow-hidden"
+            className="relative bg-primary text-white px-8 py-3 rounded font-display font-bold hover:opacity-80 transition-opacity overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2">
               View Work
@@ -58,7 +58,7 @@ const HeroSection = () => {
                 className="group-hover:translate-y-1 transition-transform"
               />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-accent to-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           <div className="flex gap-4">
             {[

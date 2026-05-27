@@ -100,7 +100,7 @@ const ContactSection = () => {
             Contact
           </p>
           <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
-            Let's work <span className="gradient-text-neon">together</span>
+            Let's work together
           </h2>
           <p className="text-muted-foreground text-lg max-w-md mx-auto mb-10">
             I'm currently open to new opportunities. Whether you have a question
@@ -111,7 +111,7 @@ const ContactSection = () => {
             <DialogTrigger asChild>
               <Button
                 size="lg"
-                className="rounded-full px-8 py-7 font-display text-lg group bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/50 transition-all"
+                className="rounded-full px-8 py-7 font-display text-lg group bg-primary hover:shadow-lg hover:shadow-primary/50 transition-all"
               >
                 <Mail size={20} />
                 Say Hello
@@ -123,7 +123,7 @@ const ContactSection = () => {
             </DialogTrigger>
 
             <DialogContent className="border-secondary/50 bg-card p-0 sm:max-w-xl overflow-hidden">
-              <div className="bg-gradient-to-br from-primary/30 via-background to-background p-6 border-b border-secondary/50">
+              <div className="bg-card p-6 border-b border-secondary/50">
                 <DialogHeader>
                   <DialogTitle className="font-display text-2xl text-secondary">
                     Say Hello
@@ -133,7 +133,9 @@ const ContactSection = () => {
 
               <form onSubmit={handleSubmit} className="space-y-5 p-6">
                 <div className="space-y-2">
-                  <Label htmlFor="senderEmail" className="text-secondary">Your email</Label>
+                  <Label htmlFor="senderEmail" className="text-secondary">
+                    Your email
+                  </Label>
                   <Input
                     id="senderEmail"
                     type="email"
@@ -149,7 +151,9 @@ const ContactSection = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-secondary">Message</Label>
+                  <Label htmlFor="message" className="text-secondary">
+                    Message
+                  </Label>
                   <Textarea
                     id="message"
                     placeholder="Tell me about your project, role, or question."
@@ -166,7 +170,7 @@ const ContactSection = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="min-w-32 rounded-full bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/50"
+                    className="min-w-32 rounded-full bg-primary hover:shadow-lg hover:shadow-primary/50"
                   >
                     {isSubmitting ? (
                       <>
@@ -212,7 +216,10 @@ const ContactSection = () => {
           >
             LinkedIn
           </a>
-          <a href="#" className="hover:text-secondary transition-colors font-medium">
+          <a
+            href="#"
+            className="hover:text-secondary transition-colors font-medium"
+          >
             Twitter
           </a>
         </div>

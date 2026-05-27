@@ -64,7 +64,7 @@ const ProjectsSection = () => {
             Portfolio
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-16">
-            Featured <span className="gradient-text-neon">Projects</span>
+            Featured Projects
           </h2>
         </motion.div>
 
@@ -78,7 +78,7 @@ const ProjectsSection = () => {
               className="group relative rounded-lg border-2 border-secondary/50 bg-card overflow-hidden hover:border-secondary hover:shadow-lg hover:shadow-secondary/50 transition-all duration-300"
             >
               {/* Neon accent line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute top-0 left-0 right-0 h-1 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
 
               {/* Image background */}
               <div
