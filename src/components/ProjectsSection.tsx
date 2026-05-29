@@ -20,6 +20,15 @@ const projects = [
     source: "https://github.com/jersonamerica/l9-hotdogz",
   },
   {
+    title: "SprintX - Project Management",
+    description:
+      "Full-stack application for managing projects and tasks in a team environment. Users can create projects, assign tasks, track progress, and collaborate with team members in real-time.",
+    tags: ["React", "NextJS", "Tailwind CSS", "Supabase", "PostgreSQL"],
+    image: "/projects/sprintx.jpg",
+    link: "https://sprintx-six.vercel.app/",
+    source: "https://github.com/jersonamerica/sprintx",
+  },
+  {
     title: "Cryptojers",
     description:
       "A comprehensive cryptocurrency tracking platform featuring a complete list of cryptocurrencies with detailed information for each asset. Access real-time news updates, monitor price changes with interactive graphs that track performance over time, and stay informed about market trends.",

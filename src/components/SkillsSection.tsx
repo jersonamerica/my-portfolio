@@ -28,6 +28,8 @@ const skills = [
       "MSSQL",
       "DB2",
       "MongoDB",
+      "PostgreSQL",
+      "Supabase",
     ],
   },
   {
